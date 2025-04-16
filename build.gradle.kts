@@ -15,16 +15,6 @@ repositories {
 dependencies {
     compileOnly("com.destroystokyo.paper:paper-api:1.16.5-R0.1-SNAPSHOT")
 
-    implementation("com.google.inject:guice:${Version.GUICE}") {
-        exclude(module = "error_prone_annotations")
-        exclude(module = "jakarta.inject-api")
-        exclude(module = "javax.inject")
-        exclude(module = "asm")
-    }
-    implementation("com.google.inject.extensions:guice-assistedinject:${Version.GUICE}") {
-        exclude(module = "error_prone_annotations")
-    }
-
     implementation("org.spongepowered:configurate-yaml:${Version.CONFIG}") {
         exclude(module = "error_prone_annotations")
         exclude(module = "option")
