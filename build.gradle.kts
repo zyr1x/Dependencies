@@ -15,9 +15,6 @@ repositories {
 dependencies {
     compileOnly("com.destroystokyo.paper:paper-api:1.16.5-R0.1-SNAPSHOT")
 
-    implementation(kotlin("stdlib"))
-    implementation(kotlin("reflect"))
-
     implementation("com.google.inject:guice:${Version.GUICE}") {
         exclude(module = "error_prone_annotations")
         exclude(module = "jakarta.inject-api")
@@ -79,6 +76,11 @@ tasks.shadowJar {
     exclude("colors.bin", "DebugProbesKt.bin")
 
     relocate("net.kyori", "ru.lewis.items.__relocated__.kyori")
+
+    dependencies {
+        exclude(dependency("org.jetbrains.kotlin:.*"))
+        exclude(dependency("org.jetbrains:.*"))
+    }
 }
 
 class Version {
