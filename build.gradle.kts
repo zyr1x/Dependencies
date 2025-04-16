@@ -57,12 +57,6 @@ dependencies {
     implementation("io.github.blackbaroness:duration-serializer:2.0.2") {
         exclude(module = "kotlin-stdlib")
     }
-
-    implementation("net.kyori:adventure-text-minimessage:4.20.0") {
-        exclude(module = "annotations")
-    }
-
-    implementation("net.kyori:adventure-platform-bukkit:4.3.4")
 }
 
 kotlin {
@@ -71,12 +65,10 @@ kotlin {
 
 tasks.shadowJar {
     archiveBaseName.set("Universal")
-    archiveVersion.set("1.0")
+    archiveVersion.set("2.0")
 
     archiveClassifier = ""
     exclude("colors.bin", "DebugProbesKt.bin")
-
-    relocate("net.kyori", "ru.lewis.universal.__relocated__.kyori")
 }
 
 class Version {
