@@ -15,6 +15,9 @@ repositories {
 dependencies {
     compileOnly("com.destroystokyo.paper:paper-api:1.16.5-R0.1-SNAPSHOT")
 
+    implementation(kotlin("stdlib"))
+    implementation(kotlin("reflect"))
+
     implementation("com.google.inject:guice:${Version.GUICE}") {
         exclude(module = "error_prone_annotations")
         exclude(module = "jakarta.inject-api")
@@ -24,9 +27,6 @@ dependencies {
     implementation("com.google.inject.extensions:guice-assistedinject:${Version.GUICE}") {
         exclude(module = "error_prone_annotations")
     }
-
-    implementation(kotlin("stdlib"))
-    implementation(kotlin("reflect"))
 
     implementation("org.spongepowered:configurate-yaml:${Version.CONFIG}") {
         exclude(module = "error_prone_annotations")
@@ -63,6 +63,8 @@ dependencies {
     }
 
     implementation("net.kyori:adventure-platform-bukkit:4.3.4")
+
+    implementation("com.fasterxml.jackson.core:jackson-databind:2.15.2")
 }
 
 kotlin {
